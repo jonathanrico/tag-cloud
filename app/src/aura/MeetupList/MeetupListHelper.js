@@ -6,7 +6,6 @@
         }
         // Escape colon characters in aura ids
         var cardContainerId = "#"+component.getGlobalId().replace(/(:|;)/g,"\\$1")+"-event-cards";
-        console.log(cardContainerId);
         $j(cardContainerId).on("click",".event-read-more", function(e){
             var selectedEventId = $j(this).data('event-id');
             var cardContentElement = $j('#card-content-'+selectedEventId);
