@@ -13,6 +13,10 @@
         <name>CustomLabels</name>
     </types>
     <types>
+        <members>Meetup_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
