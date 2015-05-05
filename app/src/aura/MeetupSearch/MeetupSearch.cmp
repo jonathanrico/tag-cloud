@@ -1,18 +1,18 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
-    
+
     <aura:attribute name="maxResults" type="Integer" default="10"/>
-    
-	<aura:registerEvent name="meetupSearch" type="LightningMeetup:MeetupSearchEvent"/>
-    
+
+    <aura:registerEvent name="meetupSearch" type="LightningMeetup:MeetupSearchEvent"/>
+
     <div class="search-container">
 
         <div class="search-header">
             <div class="search-header-body">
                 <img src="/resource/MeetupResources/img/logo-2x.png"/>
-                <h2>Upcoming Events</h2>
+                <h4>Search for Meetups</h4>
             </div>
         </div>
-        
+
         <div id="meetup-search-criteria">
             <div class="div-table">
                 <div class="row">
@@ -35,11 +35,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
-    <div class="meetup-search-results">
-        <LightningMeetup:MeetupsList maxResults="{!v.maxResults}"/>
-    </div>
-    
 </aura:component>

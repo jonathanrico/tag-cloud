@@ -1,28 +1,63 @@
 .THIS.events-container{
-	margin: 15px;
+    border-radius:5px;
+    margin: 15px;
+    border: 0;
+    background-color:#fff;
+}
+
+.THIS .events-header{
+    background-color:#e2373c;
+    color:#fff;
+    width:100%;
+    height:50px;
+    border-radius:5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.THIS .events-header-body{
+    max-width: 38rem;
+    padding:0 20px;
+    margin: 0 auto;
+}
+
+.THIS .events-header-body img{
+    height:30px;
+    width:auto;
+    margin-top:10px;
+    float:left;
+}
+
+.THIS .events-header-body h4{
+    color:#fff;
+    margin:0;
+    padding: 15px 0 0 60px;
 }
 
 .THIS .event-results-header{
-	font-size: 15px;	
+    font-size: 15px;
+    padding:10px 0;
 }
 
 .THIS .event-card{
     background-color: #ffffff;
-    border-radius: 4px;
-    margin: 15px 0;
+}
+
+.THIS .events-content{
+    padding:10px 15px;
 }
 
 .THIS .event-card-title{
-	color: #3c3d3e;
-	padding: 15px 15px 10px;
-	font-size: 15px;
-	font-weight: 700;
+    color: #3c3d3e;
+    padding: 15px 0 0 0;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .THIS .event-card-body{
-	padding: 0 15px 15px;
-	line-height: 16px;
-	font-size: 14px;
+    padding: 0;
+    line-height: 16px;
+    font-size: 14px;
 }
 
 .THIS .event-card-body .event-location{
@@ -40,17 +75,17 @@
     font-size:13px;
     display: block;
     text-align:center;
-	padding:0px 13px 5px 13px;
+    padding:0px 13px 5px 13px;
 }
 
 .THIS .event-card-body img{
     max-height:80px;
     max-width:80%;
-	width:auto;
+    width:auto;
 }
 
 .THIS .event-card-footer{
-    padding: 15px 15px 30px;
+    padding: 15px 0px 20px;
     border-top-width: 1px;
     border-top-style: solid;
     border-color: #f5f5f6;
@@ -73,7 +108,7 @@
 .THIS .meetup-apikey-input{
     width: 100%;
     margin-top: 10px;
-	font-family: 'ProximaNovaSoft-Regular';
+    font-family: 'ProximaNovaSoft-Regular';
     font-weight: normal;
     font-style: normal;
     font-size: .9375rem;
@@ -96,9 +131,18 @@
 
 .THIS .toggle-setup-panel{
     width:100%;
-    text-align:right;
+    text-align:left;
+    padding:0;
 }
 
 .THIS .toggle-setup-panel a{
-	font-size:14px;
+    font-size:14px;
+}
+
+.THIS .api-setup-panel{
+    padding: 0px;
+}
+
+.THIS .api-setup-panel input{
+    border: 1px solid #ddd;
 }
