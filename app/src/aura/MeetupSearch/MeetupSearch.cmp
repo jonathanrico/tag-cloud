@@ -2,7 +2,7 @@
 
     <aura:attribute name="maxResults" type="Integer" default="10"/>
 
-    <aura:registerEvent name="meetupSearch" type="LightningMeetup:MeetupSearchEvent"/>
+    <aura:registerEvent name="meetupSearch" type="lmeetup:MeetupSearchEvent"/>
 
     <div class="search-container">
 

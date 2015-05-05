@@ -1,4 +1,4 @@
-<aura:component controller="LightningMeetup.MeetupListCtrl" implements="flexipage:availableForAllPageTypes">
+<aura:component controller="lmeetup.MeetupListCtrl" implements="flexipage:availableForAllPageTypes">
 
     <ltng:require scripts="/resource/MeetupResources/js/jquery-1.11.2.min.js" afterScriptsLoaded="{!c.doInit}"/>
 
@@ -8,11 +8,11 @@
     <aura:attribute name="maxResults" type="Integer" default="10"/>
     <aura:attribute name="showSetup" type="Boolean" default="false"/>
     <aura:attribute name="enableSetup" type="Boolean" default="false"/>
-    <aura:attribute name="events" type="LightningMeetup.MeetupEvent[]"/>
+    <aura:attribute name="events" type="lmeetup.MeetupEvent[]"/>
 
     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
     <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
-     <aura:handler event="LightningMeetup:MeetupSearchEvent" action="{!c.handleSearchEvent}"/>
+     <aura:handler event="lmeetup:MeetupSearchEvent" action="{!c.handleSearchEvent}"/>
 
     <div class="events-container">
 
