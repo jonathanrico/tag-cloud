@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="searchTerms" type="String"/>
+    <aura:attribute name="zipCode" type="String" />
+    <aura:attribute name="radius" type="Integer" />
+    <aura:attribute name="maxResults" type="Integer" />
+</aura:event>

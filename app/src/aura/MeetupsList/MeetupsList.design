@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="searchTerms" label="Search Terms"/>
+    <design:attribute name="radius" label="Radius"/>
+    <design:attribute name="zipCode" label="Zip Code"  />
+    <design:attribute name="maxResults" label="Max Results" />
+</design:component>
