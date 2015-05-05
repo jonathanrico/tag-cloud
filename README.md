@@ -1,7 +1,7 @@
-Sample App
+Lightning Meetups
 ===
 
-###Sample App Description
+Lightning Component for displaying meetups
 
 ---
 ###Developers :
