@@ -17,6 +17,10 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>MeetupAPI</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
