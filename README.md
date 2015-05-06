@@ -1,7 +1,7 @@
-Lightning Meetups
+Flickr Feeds
 ===
 
-Lightning Component for displaying meetups
+Lightning Components for displaying flickr feeds
 
 ---
 ###Developers :

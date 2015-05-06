@@ -1,0 +1,8 @@
+<aura:component controller="flikrfeeds.FlickrPublicFeedCtrl" implements="flexipage:availableForAllPageTypes">
+
+    <ltng:require scripts="/resource/FlickrFeedsResources/js/jquery-1.11.2.min.js" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+
+</aura:component>
