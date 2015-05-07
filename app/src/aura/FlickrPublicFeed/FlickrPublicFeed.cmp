@@ -1,8 +1,32 @@
 <aura:component controller="flikrfeeds.FlickrPublicFeedCtrl" implements="flexipage:availableForAllPageTypes">
 
-    <ltng:require scripts="/resource/FlickrFeedsResources/js/jquery-1.11.2.min.js" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="photos" type="flikrfeeds.FlickrPhoto[]"/>
+    <aura:attribute name="title" type="String" default="Flickr Feed" />
+    <aura:attribute name="userId" type="String" default="35972800@N02"/>
+    <aura:attribute name="currentPhotoURL" type="String" />
+    <aura:attribute name="currentPhotoIndex" type="Integer" />
 
     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
     <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="photos-container">
+
+        <div class="photos-header">
+            <div class="photos-header-body">
+                <h4>{!v.title}</h4>
+            </div>
+        </div>
+
+        <div class="photos-container">
+            <img src="{!v.currentPhotoURL}"/>
+        </div>
+
+        <div class="photos-navigation-container">
+            <ui:outputURL value="#" label="Previous" click="{!c.previousPhoto}"/>
+            <ui:outputURL value="#" label="Next" click="{!c.nextPhoto}"/>
+        </div>
+
+    </div>
 
 </aura:component>

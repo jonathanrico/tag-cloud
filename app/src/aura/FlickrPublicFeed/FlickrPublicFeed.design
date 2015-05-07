@@ -1,3 +1,4 @@
 <design:component>
-
+    <design:attribute name="title" label="Feed Title"/>
+    <design:attribute name="userId" label="Flickr User Id"/>
 </design:component>

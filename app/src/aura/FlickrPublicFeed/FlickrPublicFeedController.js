@@ -1,8 +1,8 @@
 ({
     doInit : function(component, event, helper) {
-        if (typeof jQuery !== "undefined" && typeof $j === "undefined"){
-            $j = jQuery.noConflict(true);
-        }
+        var userId = component.get('v.userId');
+        helper.getFeedPhotos(component, userId);
+        helper.initHandlers(component);
     },
 
     showSpinner : function (component, event, helper) {
@@ -17,6 +17,30 @@
         var evt = spinner.get("e.toggle");
         evt.setParams({ isVisible : false });
         evt.fire();
+    },
+
+    nextPhoto : function(component, event, helper){
+        var photos = component.get('v.photos');
+        var currentIndex = component.get('v.currentPhotoIndex');
+        if(currentIndex >= photos.length-1){
+            currentIndex = 0;
+        }else{
+            currentIndex++;
+        }
+        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
+        component.set('v.currentPhotoIndex', currentIndex);
+    },
+
+    previousPhoto : function(component, event, helper){
+        var photos = component.get('v.photos');
+        var currentIndex = component.get('v.currentPhotoIndex');
+        if(currentIndex <= 0){
+            currentIndex = photos.length-1;
+        }else{
+            currentIndex--;
+        }
+        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
+        component.set('v.currentPhotoIndex', currentIndex);
     }
 
 })
