@@ -23,7 +23,7 @@
                 component.set('v.currentPhotoIndex', 0);
                 component.set('v.currentPhotoLink', res[0].link);
             } else {
-                alert(action.getState());
+                alert('Unable to fetch Photos, please provide a Flickr User Id');
             }
         });
         $A.enqueueAction(a);
