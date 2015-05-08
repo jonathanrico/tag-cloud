@@ -1,12 +1,5 @@
 ({
 
-    initHandlers : function(component){
-        var ready = component.get("v.ready");
-        if (ready === false) {
-            return;
-        }
-    },
-
     getFeedPhotos : function(component, userId){
 
         var a = component.get("c.getFlickrFeedPhotos");
