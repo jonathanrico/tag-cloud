@@ -5,6 +5,8 @@
     <aura:attribute name="userId" type="String" default="35972800@N02"/>
     <aura:attribute name="currentPhotoURL" type="String" />
     <aura:attribute name="currentPhotoIndex" type="Integer" />
+    <aura:attribute name="currentPhotoLink" type="String" />
+    <aura:attribute name="autoplay" type="Boolean" default="false"/>
 
     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
     <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
@@ -19,12 +21,14 @@
         </div>
 
         <div class="photos-container">
-            <img src="{!v.currentPhotoURL}"/>
+            <a href="{!v.currentPhotoLink}" target="_blank">
+                <img src="{!v.currentPhotoURL}"/>
+            </a>
         </div>
 
-        <div class="photos-navigation-container">
-            <ui:outputURL value="#" label="Previous" click="{!c.previousPhoto}"/>
-            <ui:outputURL value="#" label="Next" click="{!c.nextPhoto}"/>
+        <div class="controls">
+            <ui:outputURL value="#" label="&lt;&lt;" click="{!c.previousPhoto}" class="prev"/>
+            <ui:outputURL value="#" label="&gt;&gt;" click="{!c.nextPhoto}" class="next"/>
         </div>
 
     </div>

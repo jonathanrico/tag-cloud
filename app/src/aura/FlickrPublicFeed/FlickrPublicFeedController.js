@@ -3,6 +3,21 @@
         var userId = component.get('v.userId');
         helper.getFeedPhotos(component, userId);
         helper.initHandlers(component);
+        var context = $A.getContext().getApp();
+        var autoPlay = component.get('v.autoplay');
+        // Make sure we only auto-play in the one.app context
+        if(context == 'one:one' && autoPlay && autoPlay == 'true'){
+            var autoPlay = function () {
+                  setTimeout(function () {
+                      console.log('auto play');
+                      if(component){
+                          helper.moveToNextPhoto(component);
+                          autoPlay();
+                      }
+                  }, 5000);
+            };
+            autoPlay();
+        }
     },
 
     showSpinner : function (component, event, helper) {
@@ -20,27 +35,11 @@
     },
 
     nextPhoto : function(component, event, helper){
-        var photos = component.get('v.photos');
-        var currentIndex = component.get('v.currentPhotoIndex');
-        if(currentIndex >= photos.length-1){
-            currentIndex = 0;
-        }else{
-            currentIndex++;
-        }
-        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
-        component.set('v.currentPhotoIndex', currentIndex);
+        helper.moveToNextPhoto(component);
     },
 
     previousPhoto : function(component, event, helper){
-        var photos = component.get('v.photos');
-        var currentIndex = component.get('v.currentPhotoIndex');
-        if(currentIndex <= 0){
-            currentIndex = photos.length-1;
-        }else{
-            currentIndex--;
-        }
-        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
-        component.set('v.currentPhotoIndex', currentIndex);
+        helper.moveToPreviousPhoto(component);
     }
 
 })

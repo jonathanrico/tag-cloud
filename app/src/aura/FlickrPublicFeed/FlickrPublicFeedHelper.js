@@ -18,16 +18,42 @@
         a.setCallback(this, function(action) {
             if (action.getState() === "SUCCESS") {
                 res = action.getReturnValue();
-                console.log(res);
                 component.set('v.photos',action.getReturnValue());
                 component.set('v.currentPhotoURL', res[0].photoURL);
                 component.set('v.currentPhotoIndex', 0);
+                component.set('v.currentPhotoLink', res[0].link);
             } else {
                 alert(action.getState());
             }
         });
         $A.enqueueAction(a);
 
+    },
+
+    moveToNextPhoto : function(component){
+        var photos = component.get('v.photos');
+        var currentIndex = component.get('v.currentPhotoIndex');
+        if(currentIndex >= photos.length-1){
+            currentIndex = 0;
+        }else{
+            currentIndex++;
+        }
+        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
+        component.set('v.currentPhotoIndex', currentIndex);
+        component.set('v.currentPhotoLink', photos[currentIndex].link);
+    },
+
+    moveToPreviousPhoto : function(component){
+        var photos = component.get('v.photos');
+        var currentIndex = component.get('v.currentPhotoIndex');
+        if(currentIndex <= 0){
+            currentIndex = photos.length-1;
+        }else{
+            currentIndex--;
+        }
+        component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
+        component.set('v.currentPhotoIndex', currentIndex);
+        component.set('v.currentPhotoLink', photos[currentIndex].link);
     }
 
 })

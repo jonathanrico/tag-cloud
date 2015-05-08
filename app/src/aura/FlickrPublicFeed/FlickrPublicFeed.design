@@ -1,4 +1,5 @@
-<design:component>
-    <design:attribute name="title" label="Feed Title"/>
-    <design:attribute name="userId" label="Flickr User Id"/>
+<design:component label="Flickr Public Feed">
+    <design:attribute name="title" label="Feed Title" description="Title you want to display for this Flickr feed"/>
+    <design:attribute name="userId" label="Flickr User Id" description="You can find your Flickr user id by entering your Flickr username here : http://idgettr.com/"/>
+    <design:attribute name="autoPlay" label="Autoplay Images" description="Enable this setting to move to the next image automatically every 5 seconds"/>
 </design:component>
