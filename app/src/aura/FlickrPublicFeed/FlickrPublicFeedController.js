@@ -9,7 +9,6 @@
         if(context == 'one:one' && autoPlay == true){
             var autoPlay = function () {
                   setTimeout(function () {
-                      console.log('auto play');
                       if(component){
                           helper.moveToNextPhoto(component);
                           autoPlay();
