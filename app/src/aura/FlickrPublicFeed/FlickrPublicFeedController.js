@@ -6,7 +6,7 @@
         var context = $A.getContext().getApp();
         var autoPlay = component.get('v.autoplay');
         // Make sure we only auto-play in the one.app context
-        if(context == 'one:one' && autoPlay && autoPlay == 'true'){
+        if(context == 'one:one' && autoPlay == true){
             var autoPlay = function () {
                   setTimeout(function () {
                       console.log('auto play');
