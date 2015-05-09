@@ -39,6 +39,7 @@
     height:100%;
     width:auto;
     max-width: 100%;
+    border-radius:10px;
 }
 
 .THIS .photos-navigation-container{
@@ -58,7 +59,20 @@
   height:60px;
   width: 100%;
   max-width:460px;
+  margin:10px 0;
 }
 
 .THIS .controls .prev { position: absolute; left: 20px; padding: 20px 60px;}
 .THIS .controls .next { position: absolute; right: 20px; padding: 20px 60px;}
+
+.THIS .controls a{
+    border-radius:20px;
+}
+
+.THIS .controls a:hover{
+  background-color:#FCFCFC;
+}
+
+.THIS .controls a:active{
+  background-color:#EEEEEE;
+}
