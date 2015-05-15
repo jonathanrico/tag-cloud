@@ -47,6 +47,28 @@
         component.set('v.currentPhotoURL', photos[currentIndex].photoURL);
         component.set('v.currentPhotoIndex', currentIndex);
         component.set('v.currentPhotoLink', photos[currentIndex].link);
+    },
+
+    startAutoPlay : function(component){
+        var autoPlay = component.get('v.autoplay');
+        if(autoPlay == true || autoPlay == 'true'){
+            var moveFunction = this.moveToNextPhoto;
+            var autoPlay = function () {
+            var timeOutId = setTimeout(function () {
+                    moveFunction(component);
+                    autoPlay();
+              	}, 5000);
+            	component.set('v.timerId', timeOutId);
+            };
+            autoPlay();
+        }
+    },
+
+    stopAutoPlay : function(component){
+        var timeOutId = component.get('v.timerId');
+        if(timeOutId){
+            clearTimeout(timeOutId);
+        }
     }
 
 })
