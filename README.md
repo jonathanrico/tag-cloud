@@ -1,7 +1,7 @@
-Flickr Feeds
+Tag Cloud
 ===
 
-Lightning Components for displaying flickr feeds
+Lightning Component for displaying tag clouds
 
 ---
 ###Developers :

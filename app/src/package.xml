@@ -13,10 +13,6 @@
         <name>CustomLabels</name>
     </types>
     <types>
-        <members>FlickrAPI</members>
-        <name>RemoteSiteSetting</name>
-    </types>
-    <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
