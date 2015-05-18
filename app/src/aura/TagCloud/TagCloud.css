@@ -1,78 +1,31 @@
-.THIS.photos-container{
-    border-radius:5px;
-    margin: 15px;
-    padding: 10px;
-    border: 0;
-    background-color:#fff;
+.THIS #mycloudtag{
+    width: 100%;
+    height:400px;
 }
-
-.THIS .photos-header{
-    background-color:#fff;
-    color:#fff;
-    width:100%;
-    height:50px;
-    border-radius:5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.THIS ul.tagcloud-list {
+  border: 1px solid #000;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: "Arial", "sans-self";
+  padding: 2px;
+  margin: 10px;
 }
-
-.THIS .photos-header-body{
-    max-width: 38rem;
-    padding:0 20px;
-    margin: 0 auto;
+.THIS li.tagcloud-base {
+  font-size: 24px;
+  display: inline;
 }
-
-.THIS .photos-header-body h4{
-    color:#000;
-    margin:0;
-    padding: 15px 0 0 0;
+.THIS a.tagcloud-anchor {
+  text-decoration: none;
 }
-
-.THIS .photos-container{
-    line-height: 0;
-    width:100%;
-    height:250px;
-    text-align:center;
+.THIS a.tagcloud-ealiest {
+  color: #ccc;
 }
-
-.THIS .photos-container img{
-    height:100%;
-    width:auto;
-    max-width: 100%;
-    border-radius:10px;
+.THIS a.tagcloud-earlier {
+  color: #99c;
 }
-
-.THIS .photos-navigation-container{
-    width:100%;
-    text-align:center;
-    padding: 15px 0;
-    height:60px;
+.THIS a.tagcloud-later {
+  color: #99f;
 }
-
-.THIS .photos-navigation-container a{
-    padding: 30px 40px;
-}
-
-.THIS .controls {
-  position: relative;
-  top: 0;
-  height:60px;
-  width: 100%;
-  max-width:460px;
-  margin:10px 0;
-}
-
-.THIS .controls .prev { position: absolute; left: 20px; padding: 20px 60px;}
-.THIS .controls .next { position: absolute; right: 20px; padding: 20px 60px;}
-
-.THIS .controls a{
-    border-radius:20px;
-}
-
-.THIS .controls a:hover{
-  background-color:#FCFCFC;
-}
-
-.THIS .controls a:active{
-  background-color:#EEEEEE;
+.THIS a.tagcloud-latest {
+  color: #00f;
 }
