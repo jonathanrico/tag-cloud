@@ -17,12 +17,13 @@
                 var tc = TagCloud.create();
                 for(i = 0; i < tags.length; i++){
                     var tagItem = tags[i];
-                    tc.add(tagItem.name, tagItem.weight, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
+                    var itemWeight = (!tagItem.weight || tagItem.weight <= 0)?1:tagItem.weight;
+                    tc.add(tagItem.name, itemWeight, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
                 }
 
                 tc.loadEffector('CountSize').base(10).range(20);
-
                 tc.setup(tagcontainer);
+
             } else {
                 alert('Unable to fetch tags');
             }
