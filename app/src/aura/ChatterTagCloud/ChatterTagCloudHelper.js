@@ -17,7 +17,7 @@
                 var tc = TagCloud.create();
                 for(i = 0; i < tags.length; i++){
                     var tagItem = tags[i];
-                    tc.add(tagItem.name, i+1, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
+                    tc.add(tagItem.name, tagItem.weight, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
                 }
 
                 tc.loadEffector('CountSize').base(10).range(20);

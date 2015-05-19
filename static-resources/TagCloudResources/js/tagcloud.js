@@ -141,16 +141,6 @@ TagCloud.Container.prototype.loadEffector = function (effectorName) {
   return effector;
 }
 
-TagCloud.Container.prototype.navigateToSObject = function(recordId){
-    var urlEvent = $A.get("e.force:navigateToSObject");
-    urlEvent.setParams({
-        "recordId": recordId,
-        "slideDevName": "feed"
-    });
-    urlEvent.fire();
-}
-
-
 TagCloud.Effector = new Object();
 
 TagCloud.Effector.CountSize = function () {
@@ -291,4 +281,13 @@ TagCloud.Calculator.prototype.initializeFactor = function() {
 
 TagCloud.Calculator.prototype.calculate = function (num) {
   return parseInt((Math.log(num) - this.min) * this.factor);
+}
+
+TagCloud.navigateToSObject = function(recordId){
+    var urlEvent = $A.get("e.force:navigateToSObject");
+    urlEvent.setParams({
+        "recordId": recordId,
+        "slideDevName": "feed"
+    });
+    urlEvent.fire();
 }
