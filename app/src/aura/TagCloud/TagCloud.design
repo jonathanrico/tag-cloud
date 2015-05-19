@@ -1,3 +1,0 @@
-<design:component label="Tag Cloud">
-    <design:attribute name="title" label="Tag Cloud Title" description="Title you want to display for this tag cloud"/>
-</design:component>

@@ -1,10 +1,12 @@
 ({
-    loadTagItems : function(component, type, tagcontainer){
+
+    loadTagItems : function(component, type, maxTags, tagcontainer){
 
         var a = component.get("c.getTags");
 
         a.setParams({
-            'tagType': type
+            'tagType': type,
+            'maxTags': maxTags
         });
 
         a.setCallback(this, function(action) {
@@ -15,11 +17,10 @@
                 var tc = TagCloud.create();
                 for(i = 0; i < tags.length; i++){
                     var tagItem = tags[i];
-                    tc.add(tagItem.name, tagItem.weight, '/'+tagItem.itemId, Date.parse('2005/06/23 00:00:00'));
+                    tc.add(tagItem.name, i+1, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
                 }
 
-                tc.loadEffector('CountSize').base(10).range(5);
-                tc.loadEffector('DateTimeColor');
+                tc.loadEffector('CountSize').base(10).range(20);
 
                 tc.setup(tagcontainer);
             } else {

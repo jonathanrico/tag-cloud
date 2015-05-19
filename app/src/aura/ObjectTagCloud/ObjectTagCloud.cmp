@@ -1,0 +1,20 @@
+<aura:component controller="tagcloud.TagCloudCtrl" implements="flexipage:availableForAllPageTypes">
+
+    <ltng:require scripts="/resource/tagcloud__TagCloudResources/js/tagcloud.js" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="title" type="String" default="Tag Cloud"/>
+    <aura:attribute name="objectName" type="String" default="Account" />
+    <aura:attribute name="maxTags" type="Integer" default="20" />
+
+    <div class="tagcloud-container">
+
+        <div class="tagcloud-header">
+            <div class="tagcloud-header-body">
+                <h4>{!v.title}</h4>
+            </div>
+        </div>
+
+        <div id="{!globalId + '_tagcloud'}" class="tagcloud-wrapper"/>
+    </div>
+
+</aura:component>

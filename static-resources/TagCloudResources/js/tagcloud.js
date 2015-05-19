@@ -3,7 +3,7 @@
  *
  * (c) 2006 Lyo Kato <lyo.kato@gmail.com>
  * TagCloud is freely distributable under the terms of an MIT-style license.
- * 
+ *
 /**************************************************************************/
 
 var TagCloud = {
@@ -141,6 +141,16 @@ TagCloud.Container.prototype.loadEffector = function (effectorName) {
   return effector;
 }
 
+TagCloud.Container.prototype.navigateToSObject = function(recordId){
+    var urlEvent = $A.get("e.force:navigateToSObject");
+    urlEvent.setParams({
+        "recordId": recordId,
+        "slideDevName": "feed"
+    });
+    urlEvent.fire();
+}
+
+
 TagCloud.Effector = new Object();
 
 TagCloud.Effector.CountSize = function () {
@@ -188,7 +198,11 @@ TagCloud.Effector.CountSize.prototype.affect = function (tags) {
   for (var j = 0; j < tags.length; j++) {
     var tag  = tags[j];
     var size = calculator.calculate(tag.count);
-    tag.style.fontSize = String(size + minFontSize) + this._suffix;
+    var fontSize = size + minFontSize;
+    if(fontSize <= 0){
+        fontSize = 8;
+    }
+    tag.style.fontSize = String(fontSize) + this._suffix;
   }
 }
 
@@ -278,4 +292,3 @@ TagCloud.Calculator.prototype.initializeFactor = function() {
 TagCloud.Calculator.prototype.calculate = function (num) {
   return parseInt((Math.log(num) - this.min) * this.factor);
 }
-

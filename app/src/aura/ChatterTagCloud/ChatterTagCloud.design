@@ -1,0 +1,4 @@
+<design:component label="Chatter Tag Cloud">
+    <design:attribute name="title" label="Tag Cloud Title" description="Title you want to display for this tag cloud"/>
+    <design:attribute name="maxTags" label="Max # of Tags" description="Max # of tags to display"/>
+</design:component>

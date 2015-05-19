@@ -1,0 +1,56 @@
+.THIS.tagcloud-container{
+    border-radius:5px;
+    margin: 15px;
+    padding: 10px;
+    border: 0;
+    background-color:#fff;
+}
+
+.THIS .tagcloud-header{
+    background-color:#fff;
+    color:#fff;
+    width:100%;
+    height:50px;
+    border-radius:5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.THIS .tagcloud-header-body{
+    max-width: 38rem;
+    padding:0 10px;
+    margin: 0 auto;
+}
+
+.THIS .tagcloud-header-body h4{
+    color:#000;
+    margin:0;
+    padding: 15px 0 0 0;
+}
+
+.THIS.tagcloud-wrapper{
+    width: 100%;
+    height:400px;
+}
+
+.THIS ul.tagcloud-list {
+  border:0;
+  padding:0 10px;
+  font-size: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.THIS li.tagcloud-base {
+  font-size:28px;
+  padding:2px;
+  display: inline;
+}
+
+.THIS a.tagcloud-anchor {
+  text-decoration: none;
+}
+
+.THIS a {
+  color: #006EB3;
+}
