@@ -1,9 +1,10 @@
 <aura:component controller="tagcloud.TagCloudCtrl" implements="flexipage:availableForAllPageTypes">
 
-    <ltng:require scripts="/resource/tagcloud__TagCloudRes/js/tagcloud.js" afterScriptsLoaded="{!c.doInit}"/>
+    <ltng:require scripts="/resource/tagcloud__TagCloudRes/js/tag_cloud.js" afterScriptsLoaded="{!c.doInit}"/>
 
-    <aura:attribute name="title" type="String" default="Tag Cloud" />
+    <aura:attribute name="title" type="String" default="Most Talked About" />
     <aura:attribute name="maxTags" type="Integer" default="20" />
+    <aura:attribute name="totalTags" type="Integer" />
 
     <div class="tagcloud-container">
 
@@ -14,6 +15,13 @@
         </div>
 
         <div id="{!globalId + '_tagcloud'}" class="tagcloud-wrapper"/>
+
+        <aura:if isTrue="{!v.totalTags == 0}">
+            <div class="noresults-panel">
+                No results
+            </div>
+        </aura:if>
+
     </div>
 
 </aura:component>

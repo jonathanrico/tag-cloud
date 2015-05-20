@@ -42,7 +42,7 @@
 }
 
 .THIS li.tagcloud-base {
-    font-size:28px;
+    font-size:12px;
     padding:2px;
     display: inline;
 }
@@ -58,4 +58,8 @@
 
 .THIS a {
     color: #006EB3;
+}
+
+.THIS .noresults-panel{
+    text-align: center;
 }

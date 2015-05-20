@@ -12,8 +12,14 @@ public with sharing class TagCloudCtrl{
 
     private static List<TagCloudItem> getMostTalkedAboutTopics(Integer maxItems){
         List<TagCloudItem> results = new List<TagCloudItem>();
-        for(Topic t : [select Id,Name,TalkingAbout from Topic order by TalkingAbout desc limit :maxItems]){
-            results.add(new TagCloudItem(t.Id, t.Name, t.TalkingAbout));
+        Set<Id> mostTalkedTopicIds = new Set<Id>();
+        for(Topic t : [select Id from Topic order by TalkingAbout desc limit :maxItems]){
+            mostTalkedTopicIds.add(t.Id);
+        }
+        if(mostTalkedTopicIds.size()>0){
+          for(Topic t : [select Id,Name,TalkingAbout from Topic where id in :mostTalkedTopicIds order by Name asc]){
+              results.add(new TagCloudItem(t.Id, t.Name, t.TalkingAbout));
+          }
         }
         return results;
     }
@@ -27,7 +33,6 @@ public with sharing class TagCloudCtrl{
             return results;
         }
         String objectPrefix = sObjType.getDescribe().getkeyprefix();
-
         List<AggregateResult> groupedResults = [select TopicId
                                                 ,Count(Id) cnt
                                                 from TopicAssignment
@@ -35,16 +40,16 @@ public with sharing class TagCloudCtrl{
                                                 and CreatedDate = THIS_MONTH
                                                 group by TopicId
                                                 order by Count(Id) desc
-                                                LIMIT :maxItems];
-
+                                                LIMIT 30000];
         for (AggregateResult ar : groupedResults){
+            if(topicsMap.size() > maxItems){
+              break;
+            }
             topicsMap.put((String)ar.get('TopicId'), (Integer)ar.get('cnt'));
         }
-
-        for(Topic t : [select Id,Name from Topic where id in :topicsMap.keySet() order by Name desc]){
+        for(Topic t : [select Id,Name from Topic where id in :topicsMap.keySet() order by Name asc]){
             results.add(new TagCloudItem(t.Id, t.Name, topicsMap.get(t.Id)));
         }
-
         return results;
     }
 

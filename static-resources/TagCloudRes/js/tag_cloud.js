@@ -188,11 +188,7 @@ TagCloud.Effector.CountSize.prototype.affect = function (tags) {
   for (var j = 0; j < tags.length; j++) {
     var tag  = tags[j];
     var size = calculator.calculate(tag.count);
-    var fontSize = size + minFontSize;
-    if(fontSize <= 0){
-        fontSize = 8;
-    }
-    tag.style.fontSize = String(fontSize) + this._suffix;
+    tag.style.fontSize = String(size + minFontSize) + this._suffix;
   }
 }
 

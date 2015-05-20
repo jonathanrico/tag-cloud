@@ -1,5 +1,5 @@
 <design:component label="Object Tag Cloud">
     <design:attribute name="title" label="Tag Cloud Title" description="Title you want to display for this tag cloud"/>
-    <design:attribute name="objectName" label="Object Name" description="API Name of the object you'd like to display tags for (e.g. Account, Contact, Custom_Object__c)"/>
+    <design:attribute name="objectName" label="Object Name" description="API Name of the object you'd like to display tags for (e.g. Account, Contact, FeedItem, Custom_Object__c)"/>
     <design:attribute name="maxTags" label="Max # of Tags" description="Max # of tags to display"/>
 </design:component>
