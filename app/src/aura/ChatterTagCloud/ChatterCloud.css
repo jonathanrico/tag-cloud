@@ -34,23 +34,28 @@
 }
 
 .THIS ul.tagcloud-list {
-  border:0;
-  padding:0 10px;
-  font-size: 100%;
-  font-weight: bold;
-  text-align: center;
+    border:0;
+    padding:0 10px;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
 }
 
 .THIS li.tagcloud-base {
-  font-size:28px;
-  padding:2px;
-  display: inline;
+    font-size:28px;
+    padding:2px;
+    display: inline;
+}
+
+.THIS ul.tagcloud-list a:active {
+    -webkit-tap-highlight-color: #5D6B74;
+    color:#5D6B74;
 }
 
 .THIS a.tagcloud-anchor {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .THIS a {
-  color: #006EB3;
+    color: #006EB3;
 }

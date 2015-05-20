@@ -21,7 +21,7 @@
                     tc.add(tagItem.name, itemWeight, 'javascript:TagCloud.navigateToSObject("'+tagItem.itemId+'")');
                 }
 
-                tc.loadEffector('CountSize').base(10).range(20);
+                tc.loadEffector('CountSize').base(14).range(10);
                 tc.setup(tagcontainer);
 
             } else {

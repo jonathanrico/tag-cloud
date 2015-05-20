@@ -1,6 +1,6 @@
 <aura:component controller="tagcloud.TagCloudCtrl" implements="flexipage:availableForAllPageTypes">
 
-    <ltng:require scripts="/resource/tagcloud__TagCloudResources/js/tagcloud.js" afterScriptsLoaded="{!c.doInit}"/>
+    <ltng:require scripts="/resource/tagcloud__TagCloudRes/js/tagcloud.js" afterScriptsLoaded="{!c.doInit}"/>
 
     <aura:attribute name="title" type="String" default="Tag Cloud"/>
     <aura:attribute name="objectName" type="String" default="Account" />
