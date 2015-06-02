@@ -13,10 +13,10 @@ var TagCloud = {
   }
 }
 
-TagCloud.Tag = function (name, count, url, epoch) {
+TagCloud.Tag = function (name, count, itemid, epoch) {
   this.name  = name;
   this.count = count;
-  this.url   = url;
+  this.itemid   = itemid;
   this.epoch = epoch;
   this.style = {};
   this.initClasses();
@@ -42,7 +42,8 @@ TagCloud.Tag.prototype.attachAnchorClass = function (className) {
 TagCloud.Tag.prototype.toElement = function() {
   var element = document.createElement('li');
   var linkElement = document.createElement('a');
-  linkElement.setAttribute('href', this.url);
+  linkElement.setAttribute('href','javascript:void(0)');
+  linkElement.setAttribute('data-item-id',this.itemid);
   var text = document.createTextNode(this.name);
   linkElement.appendChild(text);
   linkElement.className = this.anchorClasses.join(" ");
@@ -69,14 +70,14 @@ TagCloud.Container.prototype.clear = function () {
   this.tags = new Array();
 }
 
-TagCloud.Container.prototype.add = function (name, count, url, epoch) {
+TagCloud.Container.prototype.add = function (name, count, itemid, epoch) {
   if (count == 0)
     throw "TagCloud.Container.prototype.add: second argument should be over 0.";
-  this.tags.push(this.createTag(name, count, url, epoch));
+  this.tags.push(this.createTag(name, count, itemid, epoch));
 }
 
-TagCloud.Container.prototype.createTag = function (name, count, url, epoch) {
-    return new TagCloud.Tag(name, count, url, epoch);
+TagCloud.Container.prototype.createTag = function (name, count, itemid, epoch) {
+    return new TagCloud.Tag(name, count, itemid, epoch);
 }
 
 TagCloud.Container.prototype.toElement = function (filter) {
