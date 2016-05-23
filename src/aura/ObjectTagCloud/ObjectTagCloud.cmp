@@ -1,10 +1,10 @@
-<aura:component controller="tagcloud.TagCloudCtrl" implements="flexipage:availableForAllPageTypes">
+<aura:component controller="tagcloud.TagCloudCtrl" implements="flexipage:availableForAllPageTypes" access="global">
 
     <ltng:require scripts="/resource/tagcloud__TagCloudRes/js/jquery-1.11.2.min.js,/resource/tagcloud__TagCloudRes/js/tag_cloud_sfdc.js" afterScriptsLoaded="{!c.doInit}"/>
 
-    <aura:attribute name="title" type="String" default="Tag Cloud"/>
-    <aura:attribute name="objectName" type="String" default="Account" />
-    <aura:attribute name="maxTags" type="Integer" default="20" />
+    <aura:attribute name="title" type="String" default="Tag Cloud" access="global" />
+    <aura:attribute name="objectName" type="String" default="Account" access="global" />
+    <aura:attribute name="maxTags" type="Integer" default="20" access="global" />
     <aura:attribute name="totalTags" type="Integer" />
 
     <div class="tagcloud-container">
